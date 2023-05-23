@@ -9,9 +9,9 @@ int numberB = Convert.ToInt32(Console.ReadLine());
 
 if (numberA > numberB)
 {
-    Console.WriteLine(&"Большее число {numberA}, меньшее {numberB}");
+    Console.WriteLine($"Большее число {numberA}, меньшее {numberB}");
 }
 else
 {
-    Console.WriteLine(&"Большее число {numberB}, меньшее {numberA}");
+    Console.WriteLine($"Большее число {numberB}, меньшее {numberA}");
 }
