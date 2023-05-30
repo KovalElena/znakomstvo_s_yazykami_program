@@ -23,15 +23,8 @@ while (number > 999) number /= 10;
         Console.WriteLine("Третьей цифры в числе нет");
     }
 }
-// if (number < 999)
-// {
-//     int returnThirdDigit = ReturnThirdDigit(number);
-//     Console.WriteLine($"Третья цифра числа {returnThirdDigit}");
-// }
-// else
-// {
-//     Console.WriteLine("Третьей цифры в числе нет");
-// }
+
+
 
 
 
