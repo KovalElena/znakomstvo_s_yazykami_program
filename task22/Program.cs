@@ -2,17 +2,17 @@
 // выдает таблицу квадратов чисел от 1 до N.
 
 Console.WriteLine("Введите целое число");
-int num = Convert.ToInt32(Console.ReadLine());
+int n = Convert.ToInt32(Console.ReadLine());
 
-SqrTable(num);
+SquareTable(n);
 
-void SqrTable(int n)
+void SquareTable(int num)
 {
-    int count = 1;
-    while (count <= n) ;
+    int i = 1;
+    while (i <= num)
     {
-        Console.WriteLine($"{count} -> {count * count}");
-        count++;
+        Console.WriteLine($"{i,3 } -> {i * i, 4}");
+        i++;
     }
 }
 
