@@ -11,7 +11,7 @@ if(number <= 0)
 }
 
 int sumNumbers = SumNumbers(number);
-Console.WriteLine($"Сумма числе от 1 до {number} равна {sumNumbers}");
+Console.WriteLine($"Сумма чисел от 1 до {number} равна {sumNumbers}");
 
 int SumNumbers(int num)
 {
