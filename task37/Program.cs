@@ -32,7 +32,7 @@ int[] MultiplyElement(int[] arr)
     {
         newArr[i] = arr[i] * arr[arr.Length - 1 - i];
     }
-    if (arr.Length % 2 == 1) newArr[arr.Length / 2] = arr[arr.Length / 2];
+    if (arr.Length % 2 == 1) newArr[newLength - 1] = arr[arr.Length / 2];
     return newArr;
 }
 
