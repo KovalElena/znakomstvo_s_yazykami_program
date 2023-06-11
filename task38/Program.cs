@@ -1,14 +1,14 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿// Задайте массив вещественных чисел. 
+// Найдите разницу между максимальными и минимальными элементами массива.
 
-double[] CreateArrayRndIntDouble(int size, int min, int max, int round = 2)
+double[] CreateArrayRndDouble(int size, int min, int max, int round)
 {
-    double[] arr = new int[size];
+    double[] arr = new double[size];
     Random rnd = new Random();
     for (int i = 0; i < arr.Length; i++)
     {
         double num = rnd.NextDouble() * (max - min) + min;
-        arr[i] = Math.Round(num, digit);
+        arr[i] = Math.Round(num, round);
     }
     return arr;
 }
@@ -21,3 +21,42 @@ void PrintArrayDouble(double[] arr, string sep = ",")
         else Console.Write($"{arr[i]}");
     }
 }
+
+double MinElem(double[] arr)
+{
+    double min = arr[0];
+    for (int i = 0; i < arr.Length; i++)
+    {
+        if (arr[i] < min) min = arr[i];
+    }
+    return min;
+}
+
+double MaxElem(double[] arr)
+{
+    double max = arr[0];
+    for (int i = 0; i < arr.Length; i++)
+    {
+        if (arr[i] > max) max = arr[i];
+    }
+    return max;
+}
+
+double DifferenceMaxMin(double max, double min)
+{
+    double dif = max - min;
+    return dif;
+}
+
+double[] array = CreateArrayRndDouble(5, -10, 10, 2);
+Console.Write("[");
+PrintArrayDouble(array, ";");
+Console.WriteLine("]");
+
+double minElem = MinElem(array);
+Console.WriteLine($"Минимальный элемент массива - {minElem}");
+double maxElem = MaxElem(array);
+Console.WriteLine($"Максимальный элемент массива - {maxElem}");
+
+double differenceMaxMin = DifferenceMaxMin(maxElem, minElem);
+Console.WriteLine($"Разность максимального и минимального элементов  - {differenceMaxMin}");
