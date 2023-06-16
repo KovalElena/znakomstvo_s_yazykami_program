@@ -54,9 +54,10 @@ PrintArrayDouble(array, ";");
 Console.WriteLine("]");
 
 double minElem = MinElem(array);
-Console.WriteLine($"Минимальный элемент массива - {minElem}");
+Console.WriteLine($"Минимальный элемент массива  {minElem}");
 double maxElem = MaxElem(array);
-Console.WriteLine($"Максимальный элемент массива - {maxElem}");
+Console.WriteLine($"Максимальный элемент массива  {maxElem}");
 
 double differenceMaxMin = DifferenceMaxMin(maxElem, minElem);
-Console.WriteLine($"Разность максимального и минимального элементов  - {differenceMaxMin}");
+double differenceMaxMinRound = Math.Round(differenceMaxMin, 2, MidpointRounding.ToZero);
+Console.WriteLine($"Разность максимального и минимального элементов   {differenceMaxMinRound}");
