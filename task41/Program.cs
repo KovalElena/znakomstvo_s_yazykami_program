@@ -1,29 +1,48 @@
 ﻿// Пользователь с клавиатуры вводит М чисел.
 // Посчитайте, сколько чисел больше 0 ввел пользователь.
 
-int[] CreateArrayRndInt(int size, int min, int max)
+
+// Считать число с консоли
+int Prompt (string message)
 {
-    int[] arr = new int[size];
-    Random rnd = new Random();
-    for (int i = 0; i < arr.Length; i++)
+    Console.Write(message); 
+    string value = Console.ReadLine();  
+    int result = Convert.ToInt32(value); 
+    return result;
+}       
+
+int[] InputArray(int length)
+{
+    int[] array = new int[length];
+    for (int i = 0; i < array.Length; i++)
     {
-        arr[i] = rnd.Next(min, max + 1);
+        array[i] = Prompt($"Введите {i + 1}-й элемент ");
     }
-    return arr;
+    return array;
+}
+void PrintArray(int[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+       Console.WriteLine($"a[{i}] = {array[i]}");
+    }
 }
 
-void PrintArray(int[] arr, string sep = ",")
+int CountPositiveNumbers(int[] array)
 {
-    for (int i = 0; i < arr.Length; i++)
+    int count = 0;
+    for (int i = 0; i < array.Length; i++)
     {
-        if (i < arr.Length - 1) Console.Write($"{arr[i]}{sep} ");
-        else Console.Write($"{arr[i]}");
+        if (array[i] > 0)
+        {
+            count ++;
+        }
     }
+    return count;
 }
 
-int CountPositiveNumbers()
-
-int[] array = CreateArrayRndInt(12, -9, 9);
-Console.Write("[");
-PrintArray(array, ";");
-Console.WriteLine("]");
+int length = Prompt("Введите количество элементов > ");
+int[] array;
+array = InputArray(length);
+PrintArray(array);
+Console.WriteLine($"Количество чисел больше 0 -> {CountPositiveNumbers(array)}");
