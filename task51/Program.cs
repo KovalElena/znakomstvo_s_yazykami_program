@@ -17,6 +17,17 @@ int GetDiagonSum(int[,] matrix)
     return sum;
 }
 
+// int SumElementsMainDiagonal (int[,] arr)
+// {
+//     int min = Math.Min(arr.GetLength(0), arr.GetLength(1));
+//     int sum = 0;
+//     for (int i = 0; i < min; i++)     
+//     {
+//       sum +=arr[i,j];  
+//     }
+//     return sum;
+// }
+
 int[,] CreateMatrixRndInt(int rows, int columns, int min, int max)
 {
     int[,] matrix = new int[rows, columns];
