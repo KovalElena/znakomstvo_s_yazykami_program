@@ -5,7 +5,6 @@
 
 int[,] CreateMatrixRndInt(int rows, int columns, int min, int max)
 {
-    // 0      1
     int[,] matrix = new int[rows, columns];
     Random rnd = new Random();
     for (int i = 0; i < matrix.GetLength(0); i++)
@@ -31,25 +30,52 @@ void PrintMatrix(int[,] matrix)
     }
 }
 
-int ElemValue(int[,] matrix)
+// int ElemValue(int numA, int numB)
+// {
+//     if (numA < 0 || numB < 0)
+//     {
+//         Console.WriteLine("Позиции элемента не могут быть отрицательными");
+//     }
+//     else if (numA > matrix.GetLength(0) || numB > matrix.GetLength(1))
+//     {
+//         Console.WriteLine("Такого элемента нет");
+//     }
+//     else
+//     {
+//         Console.WriteLine($"Элемент на позиции ({numA, numB}) имеет значение {matrix[i, j]}");
+//     }
+// }
+
+int ElemValue(int[,] matrix, int row, int column)
 {
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            if (numberA = i && numberB = j)
+            if (row > matrix.GetLength(0) || column > matrix.GetLength(1))
             {
-                Console.WriteLine($"{matrix[i, j]}")
+                Console.WriteLine("Такого элемента нет");
+            }
+            else
+            {
+                Console.WriteLine($"Элемент имеет значение {matrix[i, j]}");
             }
         }
-        return matrix;
     }
 }
 
+
 int[,] array2d = CreateMatrixRndInt(5, 5, -10, 10);
 PrintMatrix(array2d);
-ElemValue(array2d);
-Console.WriteLine($"Элемент на позиции ({numberA, numberB}) имеет значение ");
+
+Console.WriteLine("Введите позицию элемента  в строке: ");
+int Row = Convert.ToInt32(Console.ReadLine());
+
+Console.WriteLine("Введите позицию элемента  в столбце: ");
+int Column = Convert.ToInt32(Console.ReadLine());
+
+int elemValue = ElemValue(array2d, Row, Column);
+
 
 
 
