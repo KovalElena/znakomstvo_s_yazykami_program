@@ -1,8 +1,9 @@
-﻿// Задайте двумерный массив из целых чисел.
-// Найдите среднее арифметическое элементов в каждом столбце.
+﻿// Задайте двумерный массив. Напишите программу, 
+// которая поменяет местами первую и последнюю строку массива.
 
 int[,] CreateMatrixRndInt(int rows, int columns, int min, int max)
 {
+    // 0      1
     int[,] matrix = new int[rows, columns];
     Random rnd = new Random();
     for (int i = 0; i < matrix.GetLength(0); i++)
@@ -28,25 +29,21 @@ void PrintMatrix(int[,] matrix)
     }
 }
 
-int AverageOfEveryColumn(int[,] matrix)
+void ReverseRows(int[,] arr)
 {
-    double sum = 0;
-    
-    for (int j = 0; j < matrix.GetLength(1); j++)
+    int firstRow = 0;
+    int lastRow = arr.GetLength(0) - 1;
+    for (int i = 0; i < arr.GetLength(1); i++)
     {
-        for (int i = 0; i < matrix.GetLength(0); i++)
-        {
-            sum += matrix[i, j]; 
-        }
-        Console.Write($"Среднее арифметическое столбца {j} равно {sum / matrix.GetLength(0):F1} ");  
+        int temp = arr[firstRow, i];
+        arr[firstRow, i] = arr[lastRow, i];
+        arr[lastRow, i] = temp;
     }
+
 }
 
-int[,] array2d = CreateMatrixRndInt(3, 3, 0, 10);
+int[,] array2d = CreateMatrixRndInt(3, 4, -10, 10);
 PrintMatrix(array2d);
-
-AverageOfEveryColumn(array2d);
-
-
-
-
+Console.WriteLine();
+ReverseRows(array2d);
+PrintMatrix(array2d);
