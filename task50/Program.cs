@@ -32,15 +32,8 @@ void PrintMatrix(int[,] matrix)
 
 bool IsElemExists(int[,] matrix, int row, int column)
 {
-    for (int i = 0; i < matrix.GetLength(0); i++)
-    {
-        for (int j = 0; j < matrix.GetLength(1); j++)
-        {
-            if (row >= 0 && row <= matrix.GetLength(0) && column >= 0 && column <= matrix.GetLength(1))
-                return true;
-        }
-    }
-    return false;
+  if (row >= 0 && row <= matrix.GetLength(0) && column >= 0 && column <= matrix.GetLength(1)) return true;
+ return false;
 }
 
 int[,] array2d = CreateMatrixRndInt(5, 5, -10, 10);
