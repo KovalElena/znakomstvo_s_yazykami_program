@@ -31,20 +31,44 @@ void PrintMatrix(int[,] matrix)
 
 int Sum(int[,] matrix)
 {
-    int sum = matrix[i, 0];
-    for (int j = 1; j < matrix.GetLength(1); j++)
+    for (int i = 0; i < matrix.GetLength(0); i++)
     {
-        sum += matrix[i, j];
+        int sum = matrix[i, 0];
+        for (int j = 1; j < matrix.GetLength(1); j++)
+        {
+            sum += matrix[i, j];
+        }
+        Console.WriteLine($"Сумма элементов строки {i} равна {sum}");
     }
-    return sum;
+    return 0;
 }
 
+void RowSumMinimum(int[,] matrix)
+{
+    int minimalRow = Sum(matrix);
+    int indexMinimalRow = 0;
+    temp = Sum(matrix);
+    for (int i = 0; i < matrix.GetLength(0); i++)
+    {
+        for (int j = 0; j < matrix.GetLength(1); j++)
+        {
+            if (temp < minimalRow)
+            {
+                minimalRow = temp;
+                indexMinimalRow = i;
+            }
+            Console.WriteLine($"Строка с наименьшей суммой элементов {indexMinimalRow}");
+            else
+            {
+                
+            }
+        }
+    }
+}
 
-
-
-
-int[,] array2d = CreateMatrixRndInt(3, 4, -10, 10);
+int[,] array2d = CreateMatrixRndInt(3, 4, 0, 10);
 PrintMatrix(array2d);
-
 Sum(array2d);
+RowSumMinimum(array2d);
+
 
