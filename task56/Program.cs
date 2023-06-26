@@ -40,7 +40,7 @@ int Sum(int[,] matrix)
         }
         Console.WriteLine($"Сумма элементов строки {i} равна {sum}");
     }
-    return 0;
+    return sum;
 }
 
 void RowSumMinimum(int[,] matrix)
@@ -60,7 +60,7 @@ void RowSumMinimum(int[,] matrix)
             Console.WriteLine($"Строка с наименьшей суммой элементов {indexMinimalRow}");
             else
             {
-                
+
             }
         }
     }
@@ -68,7 +68,7 @@ void RowSumMinimum(int[,] matrix)
 
 int[,] array2d = CreateMatrixRndInt(3, 4, 0, 10);
 PrintMatrix(array2d);
-Sum(array2d);
+int sum = Sum(array2d);
 RowSumMinimum(array2d);
 
 
