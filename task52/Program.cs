@@ -28,17 +28,18 @@ void PrintMatrix(int[,] matrix)
     }
 }
 
-int AverageOfEveryColumn(int[,] matrix)
+void AverageOfEveryColumn(int[,] matrix)
 {
-    double sum = 0;
     
+
     for (int j = 0; j < matrix.GetLength(1); j++)
     {
-        for (int i = ; i < matrix.GetLength(0); i++)
+        double sum = 0;
+        for (int i = 0; i < matrix.GetLength(0); i++)
         {
-            sum += matrix[i, j]; 
+            sum += matrix[i, j];
         }
-        Console.Write($"Среднее арифметическое столбца {j} равно {sum / matrix.GetLength(0):F1} ");  
+        Console.Write($"Среднее арифметическое столбца {j} равно {sum / matrix.GetLength(0):F1} ");
     }
 }
 
