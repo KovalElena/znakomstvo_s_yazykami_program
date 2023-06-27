@@ -12,7 +12,6 @@ if (numberM < 0 || numberN < 0)
 Console.WriteLine($"Введенное число не должно быть отрицательным");
 }
 else AkkermanFunction(numberM, numberN);
-
 Console.WriteLine($"A(m,n) =  {AkkermanFunction(numberM, numberN)}");
 
 int AkkermanFunction(int num1, int num2)

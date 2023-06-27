@@ -3,7 +3,6 @@
 
 int[,] CreateMatrixRndInt(int rows, int columns, int min, int max)
 {
-    // 0      1
     int[,] matrix = new int[rows, columns];
     Random rnd = new Random();
     for (int i = 0; i < matrix.GetLength(0); i++)
@@ -40,35 +39,31 @@ int Sum(int[,] matrix)
         }
         Console.WriteLine($"Сумма элементов строки {i} равна {sum}");
     }
-    return sum;
+    return 0;
 }
 
-void RowSumMinimum(int[,] matrix)
-{
-    int minimalRow = Sum(matrix);
-    int indexMinimalRow = 0;
-    temp = Sum(matrix);
-    for (int i = 0; i < matrix.GetLength(0); i++)
-    {
-        for (int j = 0; j < matrix.GetLength(1); j++)
-        {
-            if (temp < minimalRow)
-            {
-                minimalRow = temp;
-                indexMinimalRow = i;
-            }
-            Console.WriteLine($"Строка с наименьшей суммой элементов {indexMinimalRow}");
-            else
-            {
-
-            }
-        }
-    }
-}
+// void RowSumMinimum(int[,] matrix)
+// {
+//     int minimalRow = ;
+//     int indexMinimalRow = 0;
+//  temp = ; 
+//     for (int i = 0; i < matrix.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < matrix.GetLength(1); j++)
+//         {
+//             if (temp < minimalRow)
+//             {
+//                 minimalRow = temp;
+//                 indexMinimalRow = i;
+//             }
+//  Console.WriteLine($"Строка с наименьшей суммой элементов {indexMinimalRow}");
+//         }
+//     }
+// }
 
 int[,] array2d = CreateMatrixRndInt(3, 4, 0, 10);
 PrintMatrix(array2d);
 int sum = Sum(array2d);
-RowSumMinimum(array2d);
+// RowSumMinimum(array2d);
 
 
